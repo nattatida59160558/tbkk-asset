@@ -298,7 +298,7 @@ using tbkk_AC;
             ");
             EndContext();
             BeginContext(5281, 1413, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2dc2b72e216241169b83568c7adf8f90", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25ba7dbfc96b461c9bc3af7f9c472d7e", async() => {
                 BeginContext(5305, 739, true);
                 WriteLiteral(@"
                 <div class=""modal-body"">
@@ -316,7 +316,7 @@ using tbkk_AC;
                             ");
                 EndContext();
                 BeginContext(6044, 62, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53c7f3289204429ab2d889837930ba53", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67528ccb29aa44839905a9d44193e6d2", async() => {
                     BeginContext(6079, 18, true);
                     WriteLiteral("Choose your option");
                     EndContext();
@@ -344,7 +344,7 @@ using tbkk_AC;
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(6136, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "651b23f122d542d8a583c814d97b14b2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "096b2333d37f4dd8b54d8340fbf80f15", async() => {
                     BeginContext(6158, 5, true);
                     WriteLiteral("Asset");
                     EndContext();
@@ -366,7 +366,7 @@ using tbkk_AC;
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(6202, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c18684681464ba38814546bfe78879a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b880f9163e194cd0807aa7e98af56816", async() => {
                     BeginContext(6226, 7, true);
                     WriteLiteral("License");
                     EndContext();
@@ -388,7 +388,7 @@ using tbkk_AC;
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(6272, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ea363426b2d4323a7dfe4cc187f3849", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2266ff26f65c4b94b83e9d8362e34153", async() => {
                     BeginContext(6298, 9, true);
                     WriteLiteral("Accessory");
                     EndContext();
@@ -451,7 +451,7 @@ using tbkk_AC;
             ");
             EndContext();
             BeginContext(7322, 1530, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "066df13f156b4e949588908f0f7c238b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5592030ec2f1419496f935cae69f58f8", async() => {
                 BeginContext(7344, 951, true);
                 WriteLiteral(@"
                 <div class=""modal-body"">
@@ -472,7 +472,7 @@ using tbkk_AC;
                             ");
                 EndContext();
                 BeginContext(8295, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d989427a01134fb2945700b14f653fde", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "105f54e7b09945be88dbd8fe736bbc0d", async() => {
                     BeginContext(8317, 5, true);
                     WriteLiteral("Asset");
                     EndContext();
@@ -494,7 +494,7 @@ using tbkk_AC;
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(8361, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2db81b1cfaf47e4a3af536302110da7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e77756be55e64d08949d6f995422dad7", async() => {
                     BeginContext(8385, 7, true);
                     WriteLiteral("License");
                     EndContext();
@@ -516,7 +516,7 @@ using tbkk_AC;
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(8431, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f43d1c185f0641208db6cbeeeef8e2c7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd6b888af20f4496b922a87e168f0a85", async() => {
                     BeginContext(8457, 9, true);
                     WriteLiteral("Accessory");
                     EndContext();
@@ -579,7 +579,7 @@ using tbkk_AC;
             ");
             EndContext();
             BeginContext(9489, 1129, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "edf019c4d55749ae8342f60b13e1e6df", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "66cdcdbc9313493b91a58e56c0a7b1f2", async() => {
                 BeginContext(9514, 738, true);
                 WriteLiteral(@"
                 <div class=""modal-body"">
@@ -598,7 +598,7 @@ using tbkk_AC;
                             ");
                 EndContext();
                 BeginContext(10252, 84, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "45454328d38243c7ae2dbb6dbe1e38bf", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b7f3fbb27ab7411c96be68f2b9cf65d5", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

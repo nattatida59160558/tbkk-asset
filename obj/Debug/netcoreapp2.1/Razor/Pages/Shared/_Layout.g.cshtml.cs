@@ -53,7 +53,7 @@ using tbkk_AC;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n");
             EndContext();
             BeginContext(37, 671, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38ed4068c34248cfb258889fa10e6501", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6539574f8b943d187a2fa3968930dbe", async() => {
                 BeginContext(43, 658, true);
                 WriteLiteral(@"
 
@@ -92,7 +92,7 @@ using tbkk_AC;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(712, 6346, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6498b93ea695438c954ba7fe85bb863c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e89e4e08c8e14bda9b9a461984862c35", async() => {
                 BeginContext(732, 358, true);
                 WriteLiteral(@"
 
@@ -108,7 +108,7 @@ using tbkk_AC;
         ");
                 EndContext();
                 BeginContext(1090, 165, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "434ac1c5ab16467c94f31450f6de17e9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc05b5992e7b486199c1284eb602c3fa", async() => {
                     BeginContext(1175, 73, true);
                     WriteLiteral("\r\n            <div class=\"input-group\">\r\n\r\n\r\n            </div>\r\n        ");
                     EndContext();

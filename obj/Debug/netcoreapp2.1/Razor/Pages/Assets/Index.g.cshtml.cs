@@ -76,7 +76,7 @@ using tbkk_AC;
             WriteLiteral("\r\n\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    <button type=\"button\" class=\"btn btn-primary assets-modal\" data-toggle=\"modal\" data-target=\"#createAssetsModal\">\r\n        Create\r\n    </button>\r\n    \r\n</p>\r\n");
             EndContext();
             BeginContext(321, 141, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d016887897554f9c87ea2f1f0118300f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b53273194044f5680350241723413ed", async() => {
                 BeginContext(371, 84, true);
                 WriteLiteral("\r\n    <input type=\"file\" name=\"photo\"/>\r\n    <input type=\"submit\" value=\"Upload\"/>\r\n");
                 EndContext();
@@ -262,7 +262,7 @@ using tbkk_AC;
             ");
             EndContext();
             BeginContext(3549, 896, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70589059b8464784b15e196894fa2289", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df9765a19d304a7b9e9eac7f70af326c", async() => {
                 BeginContext(3573, 865, true);
                 WriteLiteral(@"
                 <div class=""modal-body"">
@@ -315,7 +315,7 @@ using tbkk_AC;
             ");
             EndContext();
             BeginContext(5076, 1412, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0837835d4428475ebe5c39e7ca9d3fae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33c4025445544b2183b48c525add3d4a", async() => {
                 BeginContext(5141, 1340, true);
                 WriteLiteral(@"
                 <div class=""modal-body"">
@@ -380,7 +380,7 @@ using tbkk_AC;
             ");
             EndContext();
             BeginContext(7128, 1006, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69a62b681a5d4ec0850b8e2bac3787c5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43f1c87dd21b403bb59e8b58dc576b56", async() => {
                 BeginContext(7153, 614, true);
                 WriteLiteral(@"
                 <div class=""modal-body"">
@@ -397,7 +397,7 @@ using tbkk_AC;
                             ");
                 EndContext();
                 BeginContext(7767, 85, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2ba7f386aff7433aa6f8fce9256ac8f2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "af309999293d482188024fc888413454", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

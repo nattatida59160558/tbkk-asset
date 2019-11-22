@@ -33,7 +33,7 @@ namespace tbkk_AC.Pages.Suppliers
 
         public async Task<IActionResult> OnPostAsync(IFormFile photo)
         {
-            var file = Path.Combine(environment.ContentRootPath, "uploads", photo.FileName);
+            var file = Path.Combine(environment.ContentRootPath, "wwwroot/uploads", photo.FileName);
             var fileStream = new FileStream(file, FileMode.Create);
             Supplier.Image = photo.FileName;
             if (!ModelState.IsValid)
