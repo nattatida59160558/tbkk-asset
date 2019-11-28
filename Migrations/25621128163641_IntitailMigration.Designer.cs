@@ -10,7 +10,7 @@ using tbkk_AC.Models;
 namespace tbkk_AC.Migrations
 {
     [DbContext(typeof(tbkk_ACContext))]
-    [Migration("25621128094741_IntitailMigration")]
+    [Migration("25621128163641_IntitailMigration")]
     partial class IntitailMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -290,6 +290,25 @@ namespace tbkk_AC.Migrations
                     b.ToTable("Location");
                 });
 
+            modelBuilder.Entity("tbkk_AC.Models.Login", b =>
+                {
+                    b.Property<int>("LoginID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Employee_EmployeeID");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Username");
+
+                    b.HasKey("LoginID");
+
+                    b.HasIndex("Employee_EmployeeID");
+
+                    b.ToTable("Login");
+                });
+
             modelBuilder.Entity("tbkk_AC.Models.Model", b =>
                 {
                     b.Property<int>("ModelID")
@@ -427,6 +446,14 @@ namespace tbkk_AC.Migrations
                     b.HasOne("tbkk_AC.Models.Position", "Position")
                         .WithMany()
                         .HasForeignKey("Position_PositionID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("tbkk_AC.Models.Login", b =>
+                {
+                    b.HasOne("tbkk_AC.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("Employee_EmployeeID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -296,6 +296,27 @@ namespace tbkk_AC.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Login",
+                columns: table => new
+                {
+                    LoginID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Username = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    Employee_EmployeeID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Login", x => x.LoginID);
+                    table.ForeignKey(
+                        name: "FK_Login_Employee_Employee_EmployeeID",
+                        column: x => x.Employee_EmployeeID,
+                        principalTable: "Employee",
+                        principalColumn: "EmployeeID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Asset_Supplier_SupplierID",
                 table: "Asset",
@@ -327,6 +348,11 @@ namespace tbkk_AC.Migrations
                 column: "Position_PositionID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Login_Employee_EmployeeID",
+                table: "Login",
+                column: "Employee_EmployeeID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Model_Brand_BrandID",
                 table: "Model",
                 column: "Brand_BrandID");
@@ -343,10 +369,10 @@ namespace tbkk_AC.Migrations
                 name: "Asset");
 
             migrationBuilder.DropTable(
-                name: "Employee");
+                name: "License");
 
             migrationBuilder.DropTable(
-                name: "License");
+                name: "Login");
 
             migrationBuilder.DropTable(
                 name: "Model");
@@ -356,6 +382,15 @@ namespace tbkk_AC.Migrations
 
             migrationBuilder.DropTable(
                 name: "Supplier");
+
+            migrationBuilder.DropTable(
+                name: "Employee");
+
+            migrationBuilder.DropTable(
+                name: "Brand");
+
+            migrationBuilder.DropTable(
+                name: "Category");
 
             migrationBuilder.DropTable(
                 name: "Company");
@@ -371,12 +406,6 @@ namespace tbkk_AC.Migrations
 
             migrationBuilder.DropTable(
                 name: "Position");
-
-            migrationBuilder.DropTable(
-                name: "Brand");
-
-            migrationBuilder.DropTable(
-                name: "Category");
         }
     }
 }

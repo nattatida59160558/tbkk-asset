@@ -4,60 +4,33 @@
     ViewData["Title"] = "Home page";
 }
 
-@{
-    ViewData["Title"] = "Index";
-}
 
-<h2>Index</h2>
-
-<p>
-
-</p>
-<div class="card mb-3">
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>
-                            Date
-                        </th>
-                        <th>
-                            Car type
-                        </th>
-                        <th>
-                            No.
-                        </th>
-                        <th>
-                            Time
-                        </th>
-                        <th>
-                            Path
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td id="c1" class="assets-modal" data-toggle="modal" data-target="#detailAssetsModal">
-                            20 December 2019
-                        </td>
-                        <td id="c1" class="assets-modal" data-toggle="modal" data-target="#detailAssetsModal">
-                            Minibus 6 seat
-                        </td>
-                        <td id="c1" class="assets-modal" data-toggle="modal" data-target="#detailAssetsModal">
-                            1
-                        </td>
-                        <td>
-                            20:00
-                        </td>
-                        <td>
-                            BandSaen
-                        </td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
+<div class="card card-login mx-auto mt-5">
+    <div class="card-header">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900">Welcome TBKK</h1>
         </div>
     </div>
+    <div class="card-body ">
+        <form method="post">
+            <div class="form-group">
+
+                <input type="text" asp-for="Login.Username" name="Username" class="form-control" placeholder="ID..." aria-label="Search" aria-describedby="basic-addon2">
+
+
+            </div>
+            <div class="form-group">
+
+                <input type="password" asp-for="Login.Password" name="Password" class="form-control" placeholder="Pass..." required="required">
+
+
+            </div>
+
+            <input type="submit" value="Login" class="btn btn-primary btn-block">
+        </form>
+    </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
