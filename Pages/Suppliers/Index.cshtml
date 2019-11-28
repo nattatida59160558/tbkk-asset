@@ -34,6 +34,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Supplier[0].Image)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier[0].Status)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -59,9 +62,10 @@
                 @Html.DisplayFor(modelItem => item.Note)
             </td>
             <td>
-                <img src="~/uploads/@Html.DisplayFor(modelItem => item.Image)" width="100px" height="120px" />
-
-                
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.SupplierID">Edit</a> |

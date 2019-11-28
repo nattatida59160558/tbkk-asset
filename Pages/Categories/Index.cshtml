@@ -22,6 +22,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Category[0].TypeName)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].Status)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -36,6 +39,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CategoryID">Edit</a> |

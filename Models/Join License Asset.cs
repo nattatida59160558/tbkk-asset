@@ -11,6 +11,11 @@ namespace tbkk_AC.Models
     {
         [Key]
         public int JoinLiAsID { get; set; }
+
+        [Required]
+        [Display(Name = "Note")]
+        public string Note { get; set; }
+
         [Required]
         [Display(Name = "Status")]
         public string Status { get; set; }

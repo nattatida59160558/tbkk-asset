@@ -21,5 +21,9 @@ namespace tbkk_AC.Models
         [Required]
         [Display(Name = "Password")]
         public string Password { get; set; }
+
+        [Required]
+        [Display(Name = "Status")]
+        public string Status { get; set; }
     }
 }

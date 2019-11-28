@@ -13,6 +13,14 @@ namespace tbkk_AC.Models
         [Display(Name = "ModelName")]
         public string ModelName { get; set; }
 
+        [Required]
+        [Display(Name = "Note")]
+        public string Note { get; set; }
+
+        [Required]
+        [Display(Name = "Status")]
+        public string Status { get; set; }
+
         [ForeignKey("Brand")]
         public int Brand_BrandID { get; set; }
         public Brand Brand { get; set; }

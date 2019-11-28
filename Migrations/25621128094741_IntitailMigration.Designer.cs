@@ -10,7 +10,7 @@ using tbkk_AC.Models;
 namespace tbkk_AC.Migrations
 {
     [DbContext(typeof(tbkk_ACContext))]
-    [Migration("25621128071417_IntitailMigration")]
+    [Migration("25621128094741_IntitailMigration")]
     partial class IntitailMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,6 +91,9 @@ namespace tbkk_AC.Migrations
                     b.Property<string>("Image")
                         .IsRequired();
 
+                    b.Property<string>("Status")
+                        .IsRequired();
+
                     b.HasKey("BrandID");
 
                     b.ToTable("Brand");
@@ -105,6 +108,9 @@ namespace tbkk_AC.Migrations
                     b.Property<string>("CategoryName");
 
                     b.Property<string>("Image")
+                        .IsRequired();
+
+                    b.Property<string>("Status")
                         .IsRequired();
 
                     b.Property<string>("TypeName")
@@ -213,6 +219,9 @@ namespace tbkk_AC.Migrations
 
                     b.Property<string>("EmployeeTypeName");
 
+                    b.Property<string>("Status")
+                        .IsRequired();
+
                     b.HasKey("EmployeeTypeID");
 
                     b.ToTable("EmployeeType");
@@ -273,6 +282,9 @@ namespace tbkk_AC.Migrations
                     b.Property<string>("Note")
                         .IsRequired();
 
+                    b.Property<string>("Status")
+                        .IsRequired();
+
                     b.HasKey("LocationID");
 
                     b.ToTable("Location");
@@ -289,6 +301,12 @@ namespace tbkk_AC.Migrations
                     b.Property<int>("Category_CategoryID");
 
                     b.Property<string>("ModelName");
+
+                    b.Property<string>("Note")
+                        .IsRequired();
+
+                    b.Property<string>("Status")
+                        .IsRequired();
 
                     b.HasKey("ModelID");
 
@@ -317,6 +335,9 @@ namespace tbkk_AC.Migrations
                     b.Property<string>("Password")
                         .IsRequired();
 
+                    b.Property<string>("Status")
+                        .IsRequired();
+
                     b.HasKey("NetworkID");
 
                     b.ToTable("Network");
@@ -329,6 +350,9 @@ namespace tbkk_AC.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("PositionName");
+
+                    b.Property<string>("Status")
+                        .IsRequired();
 
                     b.HasKey("PositionID");
 
@@ -354,6 +378,9 @@ namespace tbkk_AC.Migrations
                         .IsRequired();
 
                     b.Property<string>("Note")
+                        .IsRequired();
+
+                    b.Property<string>("Status")
                         .IsRequired();
 
                     b.Property<string>("SupplierName")

@@ -12,5 +12,9 @@ namespace tbkk_AC.Models
         public int PositionID { get; set; }
 
         public string PositionName { get; set; }
+
+        [Required]
+        [Display(Name = "Status")]
+        public string Status { get; set; }
     }
 }

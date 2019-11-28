@@ -18,5 +18,9 @@ namespace tbkk_AC.Models
         [Required]
         [Display(Name = "TypeName")]
         public string TypeName { get; set; }
+
+        [Required]
+        [Display(Name = "Status")]
+        public string Status { get; set; }
     }
 }

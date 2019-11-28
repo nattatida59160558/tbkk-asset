@@ -35,6 +35,11 @@
                 <span asp-validation-for="Network.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Network.Status" class="control-label"></label>
+                <input asp-for="Network.Status" class="form-control" />
+                <span asp-validation-for="Network.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>

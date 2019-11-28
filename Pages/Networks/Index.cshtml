@@ -25,6 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Network[0].Password)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Network[0].Status)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,6 +45,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.NetworkID">Edit</a> |

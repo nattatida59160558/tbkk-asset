@@ -30,5 +30,8 @@ namespace tbkk_AC.Models
         [Required]
         [Display(Name = "Image")]
         public string Image { get; set; }
+        [Required]
+        [Display(Name = "Status")]
+        public string Status { get; set; }
     }
 }

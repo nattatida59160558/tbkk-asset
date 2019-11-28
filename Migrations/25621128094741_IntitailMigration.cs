@@ -15,7 +15,8 @@ namespace tbkk_AC.Migrations
                     BrandID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BrandName = table.Column<string>(nullable: false),
-                    Image = table.Column<string>(nullable: false)
+                    Image = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,7 +31,8 @@ namespace tbkk_AC.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CategoryName = table.Column<string>(nullable: true),
                     Image = table.Column<string>(nullable: false),
-                    TypeName = table.Column<string>(nullable: false)
+                    TypeName = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,7 +75,8 @@ namespace tbkk_AC.Migrations
                 {
                     EmployeeTypeID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    EmployeeTypeName = table.Column<string>(nullable: true)
+                    EmployeeTypeName = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -112,7 +115,8 @@ namespace tbkk_AC.Migrations
                     LocationID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     LocationName = table.Column<string>(nullable: false),
-                    Note = table.Column<string>(nullable: false)
+                    Note = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -128,7 +132,8 @@ namespace tbkk_AC.Migrations
                     NetworkName = table.Column<string>(nullable: false),
                     IpAddr = table.Column<string>(nullable: false),
                     Note = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false)
+                    Password = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -141,7 +146,8 @@ namespace tbkk_AC.Migrations
                 {
                     PositionID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    PositionName = table.Column<string>(nullable: true)
+                    PositionName = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -160,7 +166,8 @@ namespace tbkk_AC.Migrations
                     Email = table.Column<string>(nullable: false),
                     URL = table.Column<string>(nullable: false),
                     Note = table.Column<string>(nullable: false),
-                    Image = table.Column<string>(nullable: false)
+                    Image = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -174,6 +181,8 @@ namespace tbkk_AC.Migrations
                     ModelID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ModelName = table.Column<string>(nullable: true),
+                    Note = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false),
                     Brand_BrandID = table.Column<int>(nullable: false),
                     Category_CategoryID = table.Column<int>(nullable: false)
                 },

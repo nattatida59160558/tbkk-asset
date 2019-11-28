@@ -22,6 +22,10 @@ namespace tbkk_AC.Models
         [Required]
         [Display(Name = "Password")]
         public string Password { get; set; }
+
+        [Required]
+        [Display(Name = "Status")]
+        public string Status { get; set; }
         [ForeignKey("EmpID")]
         public int Employee_EmpID { get; set; }
         public Employee Employee { get; set; }
