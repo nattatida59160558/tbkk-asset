@@ -16,11 +16,13 @@ namespace tbkk_AC.Models
         [Required]
         [Display(Name = "Status")]
         public string Status { get; set; }
-        [ForeignKey("NetworkName")]
-        public int NetworkID { get; set; }
+
+        [ForeignKey("Network")]
+        public int Network_NetworkID { get; set; }
         public Network Network { get; set; }
+
         [ForeignKey("Asset")]
-        public int AssetID { get; set; }
+        public int Asset_AssetID { get; set; }
         public Asset Asset { get; set; }
 
     }

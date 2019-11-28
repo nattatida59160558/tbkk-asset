@@ -1,0 +1,54 @@
+﻿@page
+@model tbkk_AC.Pages.Networks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Network[0].NetworkName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Network[0].IpAddr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Network[0].Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Network[0].Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Network) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetworkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IpAddr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.NetworkID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.NetworkID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.NetworkID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -38,3 +38,13 @@
   });
 
 })(jQuery); // End of use strict
+$(function () {
+    $('button[data-toggle="ajax-modal"]').click(function (event) {
+
+        var url = '/Index?handler=ContactModalPartial';
+        $.get(url).done(function (data) {
+
+            $(document).append(data).find('.modal').modal('show');
+        });
+    });
+});

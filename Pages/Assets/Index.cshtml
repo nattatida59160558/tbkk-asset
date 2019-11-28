@@ -5,306 +5,134 @@
     ViewData["Title"] = "Index";
 }
 
-@{
-    ViewData["Title"] = "Index";
-}
-
-
 <h2>Index</h2>
 
 <p>
-    <button type="button" class="btn btn-primary assets-modal" data-toggle="modal" data-target="#createAssetsModal">
-        Create
-    </button>
-    
+    <a asp-page="Create">Create New</a>
 </p>
-<form method="post" enctype="multipart/form-data">
-    <input type="file" name="photo"/>
-    <input type="submit" value="Upload"/>
-</form>
-<div class="card mb-3">
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Asset[0].AssetID)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Asset[0].AssetName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Asset[0].Image)
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Asset)
-                    {
-                        <tr>
-                            <td id="c1" class="assets-modal" data-toggle="modal" data-id="@item.AssetID" data-target="#detailAssetsModal">
-                                @Html.DisplayFor(modelItem => item.AssetID)
-                            </td>
-                            <td id="c1" class="assets-modal" data-toggle="modal" data-id="@item.AssetID" data-target="#detailAssetsModal">
-                                @Html.DisplayFor(modelItem => item.AssetName)
-                            </td>
-                            <td id="c1" class="assets-modal" data-toggle="modal" data-id="@item.AssetID" data-target="#detailAssetsModal">
-                                @Html.DisplayFor(modelItem => item.Image)
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-block assets-modal" data-toggle="modal" data-target="#editAssetsModal" data-id="@item.AssetID">
-                                    Edit
-                                </button>
-
-                                <!--<button type="button" class="btn btn-secondary assets-modal" data-toggle="modal" data-target="#detailAssetsModal" data-id="@item.AssetID">Details</button>-->
-                                <button type="button" class="btn btn-secondary assets-modal" data-toggle="modal" data-target="#deleteAssetsModal" data-id="@item.AssetID">Delete</button>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<!--modal create-->
-<div class="modal fade" id="createAssetsModal" tabindex="-1" role="dialog" aria-labelledby="createAssetsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createAssetsModalLabel">Create</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="modal-create">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Asset Name</label>
-                        <input type="text" class="form-control" id="createAsesetName" placeholder="Enter Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Example Image input</label>
-                        <input type="file" class="form-control-file" id="createimage">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="createSave">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!--end modal create-->
-<!--modal edit-->
-<div class="modal fade" id="editAssetsModal" tabindex="-1" role="dialog" aria-labelledby="editAssetsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editAssetsModalLabel">Edit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="modal-edit" method="put" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Asset ID</label>
-                        <input readonly type="text" class="form-control AsesetID" id="AsesetID">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Asset Name</label>
-                        <input type="text" class="form-control" id="AsesetName" placeholder="Enter Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Example Image input</label>
-                        <input id="image" name="image" type="file" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Asset Name</label>
-                        <input type="text" class="form-control" id="AsesetImage">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="assetsSave">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!--end modal edit-->
-<!--modal detail-->
-<div class="modal fade" id="detailAssetsModal" tabindex="-1" role="dialog" aria-labelledby="detailAssetsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="detailAssetsModalLabel">details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="model-details">
-                <div class="modal-body">
-                    <div class="row ">
-                        <div class="col-7">
-                            <label for="assetIdLabel">Asset ID</label>
-                            <p class=" AsesetID" id="assetid"></p>
-                            <br>
-                            <label for="assetNameLabel">Asset Name</label>
-                            <p id="assetname"></p>
-                        </div>
-                        <div class="col-3">
-                            <label for="assetImgLabel">Example Image</label>
-                            <img src="~/images/alpacca2.jpg style="width: 200px; height: 200px;" id="assetimage">
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!--end modal detail-->
-<!--modal del-->
-<div class="modal fade" id="deleteAssetsModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteAssetsModalLabel">Edit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ต้องการจะลบข้อมูลไหม
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" id="assetsDelete">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end modal del-->
-
-@section Scripts {
-    <script>
-
-        $(document).on("click", ".assets-modal", function () {
-            let id = $(this).data('id');
-            $.get('/api/Assets/' + id, {}, (response) => {
-                $(".modal-body #AsesetID").val(id);
-                $(".modal-body #AsesetName").val(response.assetName);
-                $(".modal-body #AsesetImage").val(response.image);
-                $("#assetid").text(id);
-                $("#assetname").text(response.assetName);
-                $("#assetimage").text(response.image);
-            });
-        });
-
-
-        $(document).on("submit", "#createAssetsModal #modal-create", function (e) {
-            e.preventDefault();
-            var data = {
-                AssetName: $(".modal-body #createAsesetName").val(),
-                Image: $(".modal-body #createimage").val(),
-            };
-
-            $.ajax({
-                type: 'POST',
-                url: '/api/Assets',
-                contentType: 'application/json',
-                data: JSON.stringify(data), // access in body
-            }).done(function () {
-                console.log('SUCCESS');
-                location.reload();
-            }).fail(function (msg) {
-                console.log(data)
-                console.log(msg);
-                alert('FAIL');
-            });
-
-        });//create
-
-        $(document).on("submit", "#detailAssetsModal #model-details", function (e) {
-            e.preventDefault();
-
-            var id = $(".modal-body #AsesetID").val();
-            var data = {
-                AssetID: id,
-                AssetName: $(".modal-body #AsesetName").val(),
-                Image: $(".modal-body #AsesetImage").val(),
-            };
-            console.log('aaa');
-            $.ajax({
-                type: 'GET',
-                url: '/api/Assets/' + id,
-                contentType: 'application/json',
-                data: JSON.stringify(data), // access in body
-            }).done(function () {
-                console.log('SUCCESS');
-                location.reload();
-            }).fail(function (msg) {
-                console.log('FAIL');
-                alert('FAIL');
-            });
-
-        });//details
-
-
-        $(document).on("submit", "#editAssetsModal #modal-edit", function (e) {
-            e.preventDefault();
-
-            var id = $(".modal-body #AsesetID").val();
-            //var data = {
-            //    AssetID: id,
-            //    AssetName: $(".modal-body #AsesetName").val(),
-            //    Image: $(".modal-body #AsesetImage").val(),
-            //}; console.log(data);
-            var file = $('#image').get(0).files[0];
-            var formdata = new FormData();
-            formdata.append('AssetID', id);
-            formdata.append('AssetName', $(".modal-body #AsesetName").val());
-            formdata.append('Image', $(".modal-body #AsesetImage").val());
-            formdata.append('image', file);
-            console.log(formdata);
-            $.ajax({
-                type: 'PUT',
-                url: '/api/Assest/' + id,
-                contentType: 'multipart/form-data',
-                cache: false,
-                processData: false,
-                data: formdata, // access in body
-            }).done(function () {
-                console.log('SUCCESS');
-                location.reload();
-            }).fail(function (msg) {
-                console.log('FAIL');
-                alert('FAIL');
-            });
-
-        });//edit
-
-        $(document).on("click", "#assetsDelete", function () {
-            let id = $(".modal-body #AsesetID").val();
-            $.ajax({
-                type: 'DELETE',
-                url: '/api/Assets/' + id,
-            }).done(function () {
-                console.log('SUCCESS');
-                location.reload();
-            }).fail(function (msg) {
-                console.log(msg);
-                alert('FAIL');
-            });
-        });//del
-    </script>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].AssetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].SerailNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].MACAddr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].InstallDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].PurchaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].ExpireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].PONumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Warranty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Company_CompanyID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Location_LocationID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Department_DepartmentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Supplier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Asset[0].Employee_EmployeeID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Asset) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerailNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MACAddr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstallDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PONumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Warranty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company_CompanyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location_LocationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department_DepartmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee_EmployeeID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AssetID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AssetID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AssetID">Delete</a>
+            </td>
+        </tr>
 }
+    </tbody>
+</table>

@@ -5,13 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="uploads\alpacca2.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="uploads\alpacca2.jpg">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <Compile Remove="uploads\**" />
+    <Content Remove="uploads\**" />
+    <EmbeddedResource Remove="uploads\**" />
+    <None Remove="uploads\**" />
   </ItemGroup>
 
   <ItemGroup>

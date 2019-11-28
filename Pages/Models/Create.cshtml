@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post"enctype="multipart/form-data">
+        <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Model.ModelName" class="control-label"></label>
@@ -19,17 +19,13 @@
                 <span asp-validation-for="Model.ModelName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Model.BrandID" class="control-label"></label>
-                <select asp-for="Model.BrandID" class="form-control" asp-items="ViewBag.BrandID"></select>
+                <label asp-for="Model.Brand_BrandID" class="control-label"></label>
+                <select asp-for="Model.Brand_BrandID" class ="form-control" asp-items="ViewBag.Brand_BrandID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Model.CategoryID" class="control-label"></label>
-                <select asp-for="Model.CategoryID" class="form-control" asp-items="ViewBag.CategoryID"></select>
+                <label asp-for="Model.Category_CategoryID" class="control-label"></label>
+                <select asp-for="Model.Category_CategoryID" class ="form-control" asp-items="ViewBag.Category_CategoryID"></select>
             </div>
-            <form method="post" >
-                <input type="file" name="photo" />
-                <input type="submit" value="Upload" />
-            </form>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>

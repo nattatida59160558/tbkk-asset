@@ -37,8 +37,8 @@ namespace tbkk_AC.Pages.Models
             {
                 return NotFound();
             }
-           ViewData["BrandID"] = new SelectList(_context.Brand, "BrandID", "BrandName");
-           ViewData["CategoryID"] = new SelectList(_context.Category, "CategoryID", "Image");
+           ViewData["Brand_BrandID"] = new SelectList(_context.Brand, "BrandID", "BrandName");
+           ViewData["Category_CategoryID"] = new SelectList(_context.Category, "CategoryID", "Image");
             return Page();
         }
 

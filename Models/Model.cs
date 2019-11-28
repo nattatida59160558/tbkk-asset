@@ -14,11 +14,11 @@ namespace tbkk_AC.Models
         public string ModelName { get; set; }
 
         [ForeignKey("Brand")]
-        public int BrandID { get; set; }
+        public int Brand_BrandID { get; set; }
         public Brand Brand { get; set; }
 
         [ForeignKey("Category")]
-        public int CategoryID { get; set; }
+        public int Category_CategoryID { get; set; }
         public Category Category { get; set; }
     }
 }

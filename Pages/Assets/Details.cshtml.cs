@@ -27,7 +27,8 @@ namespace tbkk_AC.Pages.Assets
                 return NotFound();
             }
 
-            Asset = await _context.Asset.FirstOrDefaultAsync(m => m.AssetID == id);
+            Asset = await _context.Asset
+                .Include(a => a.Supplier).FirstOrDefaultAsync(m => m.AssetID == id);
 
             if (Asset == null)
             {

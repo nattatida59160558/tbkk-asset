@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -24,7 +21,6 @@ namespace tbkk_AC.Pages.Assets
 
         [BindProperty]
         public Asset Asset { get; set; }
-        public BufferedSingleFileUploadDb FileUpload { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -33,32 +29,19 @@ namespace tbkk_AC.Pages.Assets
                 return NotFound();
             }
 
-            Asset = await _context.Asset.FirstOrDefaultAsync(m => m.AssetID == id);
+            Asset = await _context.Asset
+                .Include(a => a.Supplier).FirstOrDefaultAsync(m => m.AssetID == id);
 
             if (Asset == null)
             {
                 return NotFound();
             }
+           ViewData["Supplier_SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "Address");
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(List<IFormFile> imageFiles)
+        public async Task<IActionResult> OnPostAsync()
         {
-            long size = imageFiles.Sum(f => f.Length);
-
-            foreach (var formFile in imageFiles)
-            {
-                if (formFile.Length > 0)
-                {
-                    var filePath = Path.GetTempFileName();
-
-                    using (var stream = System.IO.File.Create(filePath))
-                    {
-                        await formFile.CopyToAsync(stream);
-                    }
-                }
-            }
-
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -85,33 +68,9 @@ namespace tbkk_AC.Pages.Assets
             return RedirectToPage("./Index");
         }
 
-        public async Task<IActionResult> OnPostUploadAsync(List<IFormFile> imageFiles)
-        {
-            long size = imageFiles.Sum(f => f.Length);
-
-            foreach (var formFile in imageFiles)
-            {
-                if (formFile.Length > 0)
-                {
-                    var filePath = Path.GetTempFileName();
-
-                    using (var stream = System.IO.File.Create(filePath))
-                    {
-                        await formFile.CopyToAsync(stream);
-                    }
-                }
-            }
-
-            // Process uploaded files
-            // Don't rely on or trust the FileName property without validation.
-
-            return RedirectToPage("./Index");
-        }
-
         private bool AssetExists(int id)
         {
             return _context.Asset.Any(e => e.AssetID == id);
         }
     }
-
 }

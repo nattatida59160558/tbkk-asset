@@ -10,7 +10,7 @@ namespace tbkk_AC.Models
     {
         public int BrandID { get; set; }
         [Required]
-        [Display(Name = "BrandName")]
+        [Display(Name = "Brand Name")]
         public string BrandName { get; set; }
 
         [Required]
