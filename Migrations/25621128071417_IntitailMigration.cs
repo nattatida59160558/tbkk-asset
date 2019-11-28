@@ -68,6 +68,44 @@ namespace tbkk_AC.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EmployeeType",
+                columns: table => new
+                {
+                    EmployeeTypeID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    EmployeeTypeName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeeType", x => x.EmployeeTypeID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "License",
+                columns: table => new
+                {
+                    LicenseID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    LicenseName = table.Column<string>(nullable: false),
+                    SoftewareName = table.Column<string>(nullable: false),
+                    PurchaseDate = table.Column<DateTime>(nullable: false),
+                    StartDate = table.Column<DateTime>(nullable: false),
+                    ExpireDate = table.Column<DateTime>(nullable: false),
+                    PONumber = table.Column<string>(nullable: false),
+                    Attachfiles = table.Column<string>(nullable: false),
+                    Note = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false),
+                    Model_ModelID = table.Column<int>(nullable: false),
+                    Supplier_SupplierID = table.Column<int>(nullable: false),
+                    Department_DepartmentID = table.Column<int>(nullable: false),
+                    Company_CompanyID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_License", x => x.LicenseID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Location",
                 columns: table => new
                 {
@@ -79,6 +117,35 @@ namespace tbkk_AC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Location", x => x.LocationID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Network",
+                columns: table => new
+                {
+                    NetworkID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    NetworkName = table.Column<string>(nullable: false),
+                    IpAddr = table.Column<string>(nullable: false),
+                    Note = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Network", x => x.NetworkID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Position",
+                columns: table => new
+                {
+                    PositionID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    PositionName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Position", x => x.PositionID);
                 });
 
             migrationBuilder.CreateTable(
@@ -128,6 +195,63 @@ namespace tbkk_AC.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Employee",
+                columns: table => new
+                {
+                    EmployeeID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    Gender = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Call = table.Column<string>(nullable: true),
+                    Line = table.Column<string>(nullable: true),
+                    Image = table.Column<string>(nullable: true),
+                    Addr = table.Column<string>(nullable: true),
+                    Date = table.Column<DateTime>(nullable: false),
+                    Status = table.Column<string>(nullable: true),
+                    Company_CompanyID = table.Column<int>(nullable: false),
+                    Department_DepartmentID = table.Column<int>(nullable: false),
+                    Location_LocationID = table.Column<int>(nullable: false),
+                    EmployeeType_EmployeeTypeID = table.Column<int>(nullable: false),
+                    Position_PositionID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employee", x => x.EmployeeID);
+                    table.ForeignKey(
+                        name: "FK_Employee_Company_Company_CompanyID",
+                        column: x => x.Company_CompanyID,
+                        principalTable: "Company",
+                        principalColumn: "CompanyID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Employee_Department_Department_DepartmentID",
+                        column: x => x.Department_DepartmentID,
+                        principalTable: "Department",
+                        principalColumn: "DepartmentID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Employee_EmployeeType_EmployeeType_EmployeeTypeID",
+                        column: x => x.EmployeeType_EmployeeTypeID,
+                        principalTable: "EmployeeType",
+                        principalColumn: "EmployeeTypeID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Employee_Location_Location_LocationID",
+                        column: x => x.Location_LocationID,
+                        principalTable: "Location",
+                        principalColumn: "LocationID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Employee_Position_Position_PositionID",
+                        column: x => x.Position_PositionID,
+                        principalTable: "Position",
+                        principalColumn: "PositionID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Asset",
                 columns: table => new
                 {
@@ -149,29 +273,12 @@ namespace tbkk_AC.Migrations
                     Company_CompanyID = table.Column<int>(nullable: false),
                     Location_LocationID = table.Column<int>(nullable: false),
                     Department_DepartmentID = table.Column<int>(nullable: false),
-                    Supplier_SupplierID = table.Column<int>(nullable: false)
+                    Supplier_SupplierID = table.Column<int>(nullable: false),
+                    Employee_EmployeeID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Asset", x => x.AssetID);
-                    table.ForeignKey(
-                        name: "FK_Asset_Company_Company_CompanyID",
-                        column: x => x.Company_CompanyID,
-                        principalTable: "Company",
-                        principalColumn: "CompanyID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Asset_Department_Department_DepartmentID",
-                        column: x => x.Department_DepartmentID,
-                        principalTable: "Department",
-                        principalColumn: "DepartmentID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Asset_Location_Location_LocationID",
-                        column: x => x.Location_LocationID,
-                        principalTable: "Location",
-                        principalColumn: "LocationID",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Asset_Supplier_Supplier_SupplierID",
                         column: x => x.Supplier_SupplierID,
@@ -181,24 +288,34 @@ namespace tbkk_AC.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Asset_Company_CompanyID",
-                table: "Asset",
-                column: "Company_CompanyID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Asset_Department_DepartmentID",
-                table: "Asset",
-                column: "Department_DepartmentID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Asset_Location_LocationID",
-                table: "Asset",
-                column: "Location_LocationID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Asset_Supplier_SupplierID",
                 table: "Asset",
                 column: "Supplier_SupplierID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employee_Company_CompanyID",
+                table: "Employee",
+                column: "Company_CompanyID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employee_Department_DepartmentID",
+                table: "Employee",
+                column: "Department_DepartmentID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employee_EmployeeType_EmployeeTypeID",
+                table: "Employee",
+                column: "EmployeeType_EmployeeTypeID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employee_Location_LocationID",
+                table: "Employee",
+                column: "Location_LocationID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employee_Position_PositionID",
+                table: "Employee",
+                column: "Position_PositionID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Model_Brand_BrandID",
@@ -217,7 +334,19 @@ namespace tbkk_AC.Migrations
                 name: "Asset");
 
             migrationBuilder.DropTable(
+                name: "Employee");
+
+            migrationBuilder.DropTable(
+                name: "License");
+
+            migrationBuilder.DropTable(
                 name: "Model");
+
+            migrationBuilder.DropTable(
+                name: "Network");
+
+            migrationBuilder.DropTable(
+                name: "Supplier");
 
             migrationBuilder.DropTable(
                 name: "Company");
@@ -226,10 +355,13 @@ namespace tbkk_AC.Migrations
                 name: "Department");
 
             migrationBuilder.DropTable(
+                name: "EmployeeType");
+
+            migrationBuilder.DropTable(
                 name: "Location");
 
             migrationBuilder.DropTable(
-                name: "Supplier");
+                name: "Position");
 
             migrationBuilder.DropTable(
                 name: "Brand");

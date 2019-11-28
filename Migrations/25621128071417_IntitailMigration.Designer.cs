@@ -10,7 +10,7 @@ using tbkk_AC.Models;
 namespace tbkk_AC.Migrations
 {
     [DbContext(typeof(tbkk_ACContext))]
-    [Migration("25621124183520_IntitailMigration")]
+    [Migration("25621128071417_IntitailMigration")]
     partial class IntitailMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,8 @@ namespace tbkk_AC.Migrations
                     b.Property<int>("Company_CompanyID");
 
                     b.Property<int>("Department_DepartmentID");
+
+                    b.Property<int>("Employee_EmployeeID");
 
                     b.Property<DateTime>("ExpireDate");
 
@@ -71,12 +73,6 @@ namespace tbkk_AC.Migrations
                     b.Property<int>("Warranty");
 
                     b.HasKey("AssetID");
-
-                    b.HasIndex("Company_CompanyID");
-
-                    b.HasIndex("Department_DepartmentID");
-
-                    b.HasIndex("Location_LocationID");
 
                     b.HasIndex("Supplier_SupplierID");
 
@@ -158,6 +154,113 @@ namespace tbkk_AC.Migrations
                     b.ToTable("Department");
                 });
 
+            modelBuilder.Entity("tbkk_AC.Models.Employee", b =>
+                {
+                    b.Property<int>("EmployeeID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Addr");
+
+                    b.Property<string>("Call");
+
+                    b.Property<int>("Company_CompanyID");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<int>("Department_DepartmentID");
+
+                    b.Property<string>("Email");
+
+                    b.Property<int>("EmployeeType_EmployeeTypeID");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("Gender");
+
+                    b.Property<string>("Image");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Line");
+
+                    b.Property<int>("Location_LocationID");
+
+                    b.Property<int>("Position_PositionID");
+
+                    b.Property<string>("Status");
+
+                    b.HasKey("EmployeeID");
+
+                    b.HasIndex("Company_CompanyID");
+
+                    b.HasIndex("Department_DepartmentID");
+
+                    b.HasIndex("EmployeeType_EmployeeTypeID");
+
+                    b.HasIndex("Location_LocationID");
+
+                    b.HasIndex("Position_PositionID");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("tbkk_AC.Models.EmployeeType", b =>
+                {
+                    b.Property<int>("EmployeeTypeID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EmployeeTypeName");
+
+                    b.HasKey("EmployeeTypeID");
+
+                    b.ToTable("EmployeeType");
+                });
+
+            modelBuilder.Entity("tbkk_AC.Models.License", b =>
+                {
+                    b.Property<int>("LicenseID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Attachfiles")
+                        .IsRequired();
+
+                    b.Property<int>("Company_CompanyID");
+
+                    b.Property<int>("Department_DepartmentID");
+
+                    b.Property<DateTime>("ExpireDate");
+
+                    b.Property<string>("LicenseName")
+                        .IsRequired();
+
+                    b.Property<int>("Model_ModelID");
+
+                    b.Property<string>("Note")
+                        .IsRequired();
+
+                    b.Property<string>("PONumber")
+                        .IsRequired();
+
+                    b.Property<DateTime>("PurchaseDate");
+
+                    b.Property<string>("SoftewareName")
+                        .IsRequired();
+
+                    b.Property<DateTime>("StartDate");
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<int>("Supplier_SupplierID");
+
+                    b.HasKey("LicenseID");
+
+                    b.ToTable("License");
+                });
+
             modelBuilder.Entity("tbkk_AC.Models.Location", b =>
                 {
                     b.Property<int>("LocationID")
@@ -196,6 +299,42 @@ namespace tbkk_AC.Migrations
                     b.ToTable("Model");
                 });
 
+            modelBuilder.Entity("tbkk_AC.Models.Network", b =>
+                {
+                    b.Property<int>("NetworkID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("IpAddr")
+                        .IsRequired();
+
+                    b.Property<string>("NetworkName")
+                        .IsRequired();
+
+                    b.Property<string>("Note")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.HasKey("NetworkID");
+
+                    b.ToTable("Network");
+                });
+
+            modelBuilder.Entity("tbkk_AC.Models.Position", b =>
+                {
+                    b.Property<int>("PositionID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("PositionName");
+
+                    b.HasKey("PositionID");
+
+                    b.ToTable("Position");
+                });
+
             modelBuilder.Entity("tbkk_AC.Models.Supplier", b =>
                 {
                     b.Property<int>("SupplierID")
@@ -230,6 +369,14 @@ namespace tbkk_AC.Migrations
 
             modelBuilder.Entity("tbkk_AC.Models.Asset", b =>
                 {
+                    b.HasOne("tbkk_AC.Models.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("Supplier_SupplierID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("tbkk_AC.Models.Employee", b =>
+                {
                     b.HasOne("tbkk_AC.Models.Company", "Company")
                         .WithMany()
                         .HasForeignKey("Company_CompanyID")
@@ -240,14 +387,19 @@ namespace tbkk_AC.Migrations
                         .HasForeignKey("Department_DepartmentID")
                         .OnDelete(DeleteBehavior.Cascade);
 
+                    b.HasOne("tbkk_AC.Models.EmployeeType", "EmployeeType")
+                        .WithMany()
+                        .HasForeignKey("EmployeeType_EmployeeTypeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("tbkk_AC.Models.Location", "Location")
                         .WithMany()
                         .HasForeignKey("Location_LocationID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("tbkk_AC.Models.Supplier", "Supplier")
+                    b.HasOne("tbkk_AC.Models.Position", "Position")
                         .WithMany()
-                        .HasForeignKey("Supplier_SupplierID")
+                        .HasForeignKey("Position_PositionID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
