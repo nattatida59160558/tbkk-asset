@@ -20,7 +20,7 @@ namespace tbkk_AC.Pages.Assets
 
         public IActionResult OnGet()
         {
-        ViewData["Supplier_SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "Address");
+        ViewData["Supplier_SupplierID"] = new SelectList(_context.Supplier, "SupplierID", "SupplierID");
             return Page();
         }
 

@@ -8,6 +8,7 @@ namespace tbkk_AC.Models
 {
     public class Update_License
     {
+        [Key]
         public int UpdateLicenseID { get; set; }
         [Required]
         [Display(Name = "Date")]

@@ -55,7 +55,7 @@ using tbkk_AC;
 #line default
 #line hidden
             BeginContext(85, 5055, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6750a0ac9f11484684816240f435e905", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b94b74fab9ec4f4389b9e03338b4f548", async() => {
                 BeginContext(105, 358, true);
                 WriteLiteral(@"
 
@@ -71,7 +71,7 @@ using tbkk_AC;
         ");
                 EndContext();
                 BeginContext(463, 165, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de73cd321fed413f94237f86ed2fed6b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "460408e72fd74af49c58b2b11a333492", async() => {
                     BeginContext(548, 73, true);
                     WriteLiteral("\r\n            <div class=\"input-group\">\r\n\r\n\r\n            </div>\r\n        ");
                     EndContext();

@@ -42,5 +42,7 @@ namespace tbkk_AC.Models
         public DbSet<tbkk_AC.Models.License> License { get; set; }
 
         public DbSet<tbkk_AC.Models.Login> Login { get; set; }
+
+        public DbSet<tbkk_AC.Models.Update_License> Update_License { get; set; }
     }
 }

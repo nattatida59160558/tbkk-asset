@@ -10,8 +10,8 @@ using tbkk_AC.Models;
 namespace tbkk_AC.Migrations
 {
     [DbContext(typeof(tbkk_ACContext))]
-    [Migration("25621128163641_IntitailMigration")]
-    partial class IntitailMigration
+    [Migration("25621129105410_Intitailmigration")]
+    partial class Intitailmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -411,6 +411,53 @@ namespace tbkk_AC.Migrations
                     b.HasKey("SupplierID");
 
                     b.ToTable("Supplier");
+                });
+
+            modelBuilder.Entity("tbkk_AC.Models.Update_License", b =>
+                {
+                    b.Property<int>("UpdateLicenseID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Attachfiles")
+                        .IsRequired();
+
+                    b.Property<int>("Company_CompanyID");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<int>("Department_DepartmentID");
+
+                    b.Property<DateTime>("ExpireDate");
+
+                    b.Property<string>("LicenseName")
+                        .IsRequired();
+
+                    b.Property<int>("License_LicenseID");
+
+                    b.Property<int>("Model_ModelID");
+
+                    b.Property<string>("Note")
+                        .IsRequired();
+
+                    b.Property<string>("PONumber")
+                        .IsRequired();
+
+                    b.Property<DateTime>("PurchaseDate");
+
+                    b.Property<string>("SoftewareName")
+                        .IsRequired();
+
+                    b.Property<DateTime>("StartDate");
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<int>("Supplier_SupplierID");
+
+                    b.HasKey("UpdateLicenseID");
+
+                    b.ToTable("Update_License");
                 });
 
             modelBuilder.Entity("tbkk_AC.Models.Asset", b =>

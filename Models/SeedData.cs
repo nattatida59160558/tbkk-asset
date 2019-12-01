@@ -182,7 +182,7 @@ namespace tbkk_AC.Models
             {
                 // Look for any movies.
 
-                if (context.EmployeeType.Any())
+                if (context.Model.Any())
                 {
                     return;   // DB has been seeded
                 }
@@ -214,7 +214,7 @@ namespace tbkk_AC.Models
             {
                 // Look for any movies.
 
-                if (context.EmployeeType.Any())
+                if (context.Employee.Any())
                 {
                     return;   // DB has been seeded
                 }
@@ -347,7 +347,7 @@ namespace tbkk_AC.Models
             {
                 // Look for any movies.
 
-                if (context.EmployeeType.Any())
+                if (context.Login.Any())
                 {
                     return;   // DB has been seeded
                 }
@@ -359,14 +359,7 @@ namespace tbkk_AC.Models
                     Employee_EmployeeID = 1
                 }
                 );
-                context.Login.AddRange(
-                new Login
-                {
-                    Username = "admin1",
-                    Password = "pass1",
-                    Employee_EmployeeID = 2
-                }
-                );
+                
                 
                 context.SaveChanges();
 

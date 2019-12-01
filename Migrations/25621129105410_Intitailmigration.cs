@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace tbkk_AC.Migrations
 {
-    public partial class IntitailMigration : Migration
+    public partial class Intitailmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -172,6 +172,33 @@ namespace tbkk_AC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Supplier", x => x.SupplierID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Update_License",
+                columns: table => new
+                {
+                    UpdateLicenseID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Date = table.Column<DateTime>(nullable: false),
+                    LicenseName = table.Column<string>(nullable: false),
+                    SoftewareName = table.Column<string>(nullable: false),
+                    PurchaseDate = table.Column<DateTime>(nullable: false),
+                    StartDate = table.Column<DateTime>(nullable: false),
+                    ExpireDate = table.Column<DateTime>(nullable: false),
+                    PONumber = table.Column<string>(nullable: false),
+                    Attachfiles = table.Column<string>(nullable: false),
+                    Note = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: false),
+                    Model_ModelID = table.Column<int>(nullable: false),
+                    Supplier_SupplierID = table.Column<int>(nullable: false),
+                    Department_DepartmentID = table.Column<int>(nullable: false),
+                    Company_CompanyID = table.Column<int>(nullable: false),
+                    License_LicenseID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Update_License", x => x.UpdateLicenseID);
                 });
 
             migrationBuilder.CreateTable(
@@ -379,6 +406,9 @@ namespace tbkk_AC.Migrations
 
             migrationBuilder.DropTable(
                 name: "Network");
+
+            migrationBuilder.DropTable(
+                name: "Update_License");
 
             migrationBuilder.DropTable(
                 name: "Supplier");
